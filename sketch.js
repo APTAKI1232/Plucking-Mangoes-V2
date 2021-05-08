@@ -44,7 +44,7 @@ function setup() {
   //create launcherObject here
  Launcher= new launcher (stoneObj.body,{x: 235,y: 420})
 
-	Engine.run(engine);
+	
 }
 
 function draw() {
@@ -54,8 +54,10 @@ function draw() {
   text("Press Space to get a second Chance to Play!!",50 ,50);
   image(boy ,200,340,200,300);
   
-
+ 
+  Engine.run(engine);
   treeObj.display();
+
   stoneObj.display();
   mango1.display();
   mango2.display();
@@ -102,6 +104,7 @@ function mouseReleased(){
 //create keyPressed function here
 
 
+
   function detectollision(lstone,lmango){
 
   mangoBodyPosition=lmango.body.position
@@ -111,7 +114,7 @@ function mouseReleased(){
   	if(distance<=lmango.r+lstone.r)
     {
       console.log (lmango);
-  	  Matter.Body.setStatic(lmango.body,true);
+  	  Matter.Body.setStatic(lmango.body,false);
     }
 
   }
